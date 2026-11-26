@@ -25,7 +25,6 @@
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
       border-bottom: 3px solid #f59e0b;
     }
-    /* Custom scrollbar */
     ::-webkit-scrollbar { width: 8px; height: 8px; }
     ::-webkit-scrollbar-track { background: #f1f5f9; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
@@ -449,22 +448,16 @@ WHERE T.GiaVe >= 200000;</code></pre>
 
   <!-- JAVASCRIPT APPLICATION LOGIC -->
   <script>
-    // 1. DỮ LIỆU ĐỀ THI MẪU CHUẨN CẤU TRÚC 2026 (24 CÂU PHẦN I: 10% L10, 20% L11, 70% L12 + 6 CÂU PHẦN II: 2 CHUNG, 2 CS, 2 ICT)
+    // 1. DỮ LIỆU ĐỀ THI MẪU CHUẨN CẤU TRÚC 2026 (24 CÂU PHẦN I + 6 CÂU PHẦN II)
     const defaultExamData = {
       title: "ĐỀ THI THỬ TỐT NGHIỆP THPT MÔN TIN HỌC (CHUẨN MA TRẬN 2026)",
       code: "0501",
       part1: [
-        // --- LỚP 10 (~10%: 2-3 câu) ---
         {
           id: 1,
           topic: "Lớp 10 • Đơn vị lưu trữ & Dữ liệu",
           question: "Một tệp video bài giảng Tin học có dung lượng 2 GB. Theo quy ước chuẩn nhị phân trong tin học (1 GB = 1024 MB), dung lượng của tệp video này tương đương với bao nhiêu Megabyte (MB)?",
-          options: [
-            "1024 MB",
-            "2000 MB",
-            "2048 MB",
-            "4096 MB"
-          ],
+          options: ["1024 MB", "2000 MB", "2048 MB", "4096 MB"],
           answer: 2,
           explanation: "Theo bội số nhị phân trong tin học: 1 GB = 1024 MB, do đó 2 GB = 2 × 1024 = 2048 MB."
         },
@@ -472,35 +465,18 @@ WHERE T.GiaVe >= 200000;</code></pre>
           id: 2,
           topic: "Lớp 10 • Biểu diễn thông tin",
           question: "Trong hệ đếm nhị phân, số nguyên dương 13 ở hệ thập phân được biểu diễn thành dãy bit nào sau đây?",
-          options: [
-            "1011",
-            "1101",
-            "1110",
-            "1001"
-          ],
+          options: ["1011", "1101", "1110", "1001"],
           answer: 1,
           explanation: "13 = 8 + 4 + 0 + 1 = 1×2³ + 1×2² + 0×2¹ + 1×2⁰ = 1101₂."
         },
         {
           id: 3,
           topic: "Lớp 10 • Lập trình Python cơ bản",
-          question: "Cho đoạn lệnh Python sau:
-```python
-a = 17
-b = 5
-print(a // b, a % b)
-```
-Kết quả in ra màn hình là gì?",
-          options: [
-            "3.4 2",
-            "3 2",
-            "2 3",
-            "3 4"
-          ],
+          question: "Cho đoạn lệnh Python sau:\n```python\na = 17\nb = 5\nprint(a // b, a % b)\n```\nKết quả in ra màn hình là gì?",
+          options: ["3.4 2", "3 2", "2 3", "3 4"],
           answer: 1,
           explanation: "Toán tử // thực hiện phép chia lấy phần nguyên (17 // 5 = 3), toán tử % lấy phần dư (17 % 5 = 2)."
         },
-        // --- LỚP 11 (~20%: 5 câu) ---
         {
           id: 4,
           topic: "Lớp 11 • Hệ điều hành & Phần mềm mở",
@@ -544,12 +520,7 @@ Kết quả in ra màn hình là gì?",
           id: 7,
           topic: "Lớp 11 • Thao tác xâu & danh sách Python",
           question: "Trong Python, sau khi thực hiện hai lệnh `s = 'THPT_Lao_Cai'` và `kq = s[5:8]`, giá trị của biến `kq` là gì?",
-          options: [
-            "'THPT'",
-            "'Lao'",
-            "'Lao_'",
-            "'_Lao'"
-          ],
+          options: ["'THPT'", "'Lao'", "'Lao_'", "'_Lao'"],
           answer: 1,
           explanation: "Chỉ số bắt đầu từ 0: s[5]='L', s[6]='a', s[7]='o'. Phép cắt s[5:8] lấy từ chỉ số 5 đến 7 nên cho kết quả 'Lao'."
         },
@@ -557,16 +528,10 @@ Kết quả in ra màn hình là gì?",
           id: 8,
           topic: "Lớp 11 • Danh sách (List) Python",
           question: "Cho danh sách `A = [12, 25, 30, 45]`. Sau khi thực hiện lệnh `A.insert(2, 99)`, danh sách `A` trở thành gì?",
-          options: [
-            "[12, 99, 25, 30, 45]",
-            "[12, 25, 99, 30, 45]",
-            "[12, 25, 30, 99, 45]",
-            "[99, 12, 25, 30, 45]"
-          ],
+          options: ["[12, 99, 25, 30, 45]", "[12, 25, 99, 30, 45]", "[12, 25, 30, 99, 45]", "[99, 12, 25, 30, 45]"],
           answer: 1,
           explanation: "Phương thức insert(2, 99) chèn phần tử 99 vào vị trí có chỉ số 2 (ngay sau phần tử 25)."
         },
-        // --- LỚP 12 (~70%: 16 câu bám sát xu hướng 2026) ---
         {
           id: 9,
           topic: "Lớp 12 • Trí tuệ nhân tạo (AI)",
@@ -689,13 +654,13 @@ Kết quả in ra màn hình là gì?",
           topic: "Lớp 12 • Thiết kế Web (HTML5/CSS3)",
           question: "Để liên kết một tệp định dạng CSS bên ngoài có tên `giaodien.css` vào trang web HTML5 một cách chuẩn xác, câu lệnh nào sau đây được đặt trong thẻ `&lt;head&gt;`?",
           options: [
-            "&lt;style src="giaodien.css"&gt;",
-            "&lt;link rel="stylesheet" href="giaodien.css"&gt;",
-            "&lt;css href="giaodien.css"&gt;",
-            "&lt;script rel="stylesheet" src="giaodien.css"&gt;"
+            "&lt;style src=\"giaodien.css\"&gt;",
+            "&lt;link rel=\"stylesheet\" href=\"giaodien.css\"&gt;",
+            "&lt;css href=\"giaodien.css\"&gt;",
+            "&lt;script rel=\"stylesheet\" src=\"giaodien.css\"&gt;"
           ],
           answer: 1,
-          explanation: "Thẻ <link rel="stylesheet" href="..."> là cú pháp chuẩn để nhúng file CSS ngoài (External CSS)."
+          explanation: "Thẻ <link rel=\"stylesheet\" href=\"...\"> là cú pháp chuẩn để nhúng file CSS ngoài (External CSS)."
         },
         {
           id: 19,
@@ -739,16 +704,7 @@ Kết quả in ra màn hình là gì?",
         {
           id: 22,
           topic: "Lớp 12 • Lập trình & Truy vết thuật toán",
-          question: "Cho đoạn chương trình Python sau:
-```python
-A = [4, 7, 2, 9, 5]
-x = A[0]
-for i in range(1, len(A)):
-    if A[i] > x:
-        x = A[i]
-print(x)
-```
-Sau khi kết thúc vòng lặp, biến `x` lưu giữ giá trị gì?",
+          question: "Cho đoạn chương trình Python sau:\n```python\nA = [4, 7, 2, 9, 5]\nx = A[0]\nfor i in range(1, len(A)):\n    if A[i] > x:\n        x = A[i]\nprint(x)\n```\nSau khi kết thúc vòng lặp, biến `x` lưu giữ giá trị gì?",
           options: [
             "Phần tử nhỏ nhất của danh sách A (giá trị 2)",
             "Phần tử lớn nhất của danh sách A (giá trị 9)",
@@ -786,7 +742,6 @@ Sau khi kết thúc vòng lặp, biến `x` lưu giữ giá trị gì?",
         }
       ],
       part2: [
-        // --- PHẦN A: CHUNG (2 CÂU) ---
         {
           id: 1,
           track: "COMMON",
@@ -804,43 +759,20 @@ Sau khi kết thúc vòng lặp, biến `x` lưu giữ giá trị gì?",
           id: 2,
           track: "COMMON",
           topic: "Phần A (Chung) • Đọc hiểu mã nguồn HTML5 & CSS3",
-          stem: "Cho đoạn mã HTML và CSS sau dùng để thiết kế thanh điều hướng đầu trang web của Câu lạc bộ Tin học:
-```html
-<style>
-  .menu { display: flex; gap: 16px; background-color: #0f766e; padding: 12px; }
-  .menu a { color: white; text-decoration: none; font-weight: bold; }
-</style>
-<header>
-  <nav class="menu">
-    <a href="#gioithieu">Giới thiệu</a>
-    <a href="https://moet.gov.vn" target="_blank">Cổng Bộ GD&ĐT</a>
-  </nav>
-</header>
-```",
+          stem: "Cho đoạn mã HTML và CSS sau dùng để thiết kế thanh điều hướng đầu trang web của Câu lạc bộ Tin học:\n```html\n<style>\n  .menu { display: flex; gap: 16px; background-color: #0f766e; padding: 12px; }\n  .menu a { color: white; text-decoration: none; font-weight: bold; }\n</style>\n<header>\n  <nav class=\"menu\">\n    <a href=\"#gioithieu\">Giới thiệu</a>\n    <a href=\"https://moet.gov.vn\" target=\"_blank\">Cổng Bộ GD&ĐT</a>\n  </nav>\n</header>\n```",
           items: [
             { text: "Thuộc tính `display: flex` giúp hai liên kết trong thanh điều hướng được xếp nằm ngang cạnh nhau thay vì xuống dòng.", correct: true },
             { text: "Bộ chọn `.menu a` chỉ áp dụng định dạng chữ màu trắng cho thẻ `&lt;nav&gt;` chứ không ảnh hưởng tới các thẻ `&lt;a&gt;` bên trong.", correct: false },
-            { text: "Khi người dùng nhấp vào liên kết 'Cổng Bộ GD&ĐT', trang web đích sẽ mở ra ở một thẻ (tab) trình duyệt mới nhờ thuộc tính `target="_blank"`.", correct: true },
+            { text: "Khi người dùng nhấp vào liên kết 'Cổng Bộ GD&ĐT', trang web đích sẽ mở ra ở một thẻ (tab) trình duyệt mới nhờ thuộc tính `target=\"_blank\"`.", correct: true },
             { text: "Thuộc tính `text-decoration: none` có tác dụng loại bỏ đường gạch chân mặc định dưới các liên kết siêu văn bản.", correct: true }
           ],
           explanation: "a) Đúng. b) Sai vì '.menu a' là bộ chọn hậu duệ, áp dụng trực tiếp cho các thẻ <a> nằm bên trong phần tử có class='menu'. c) Đúng. d) Đúng."
         },
-        // --- PHẦN B1: ĐỊNH HƯỚNG KHOA HỌC MÁY TÍNH - CS (2 CÂU) ---
         {
           id: 3,
           track: "CS",
           topic: "Phần B1 (Khoa học máy tính - CS) • Truy vết thuật toán & Hàm xử lý mảng",
-          stem: "Cho hàm Python xử lý một danh sách số nguyên `A` có ít nhất 2 phần tử:
-```python
-def xu_ly(A):
-    n = len(A)
-    dem = 0
-    for i in range(n - 1):
-        if A[i] > A[i + 1]:
-            A[i], A[i + 1] = A[i + 1], A[i]
-            dem += 1
-    return dem
-```",
+          stem: "Cho hàm Python xử lý một danh sách số nguyên `A` có ít nhất 2 phần tử:\n```python\ndef xu_ly(A):\n    n = len(A)\n    dem = 0\n    for i in range(n - 1):\n        if A[i] > A[i + 1]:\n            A[i], A[i + 1] = A[i + 1], A[i]\n            dem += 1\n    return dem\n```",
           items: [
             { text: "Câu lệnh `A[i], A[i + 1] = A[i + 1], A[i]` thực hiện hoán đổi giá trị của hai phần tử đứng liền kề nhau khi phần tử đứng trước lớn hơn phần tử đứng sau.", correct: true },
             { text: "Khi gọi hàm với danh sách `B = [6, 3, 8, 5]`, giá trị trả về của `xu_ly(B)` là `3`.", correct: false },
@@ -862,15 +794,11 @@ def xu_ly(A):
           ],
           explanation: "a) Đúng. b) Sai vì dữ liệu thô cần làm sạch và chuẩn hóa (Data Preprocessing) để tránh làm sai lệch mô hình. c) Đúng. d) Sai vì AI y tế đóng vai trò hỗ trợ ra quyết định, bác sĩ vẫn là người chịu trách nhiệm chuyên môn cuối cùng."
         },
-        // --- PHẦN B2: ĐỊNH HƯỚNG TIN HỌC ỨNG DỤNG - ICT (2 CÂU) ---
         {
           id: 5,
           track: "ICT",
           topic: "Phần B2 (Tin học ứng dụng - ICT) • Cơ sở dữ liệu Vận tải & Truy vấn SQL",
-          stem: "Một hãng xe khách liên tỉnh Lào Cai – Hà Nội quản lý đặt vé trực tuyến bằng 3 bảng dữ liệu quan hệ:
-- `TUYEN_XE(MaTuyen, TenTuyen, GiaVe)`
-- `HANH_KHACH(MaHK, HoTen, SoDT)`
-- `VE_XE(MaVe, MaTuyen, MaHK, NgayDi, SoGhe)`",
+          stem: "Một hãng xe khách liên tỉnh Lào Cai – Hà Nội quản lý đặt vé trực tuyến bằng 3 bảng dữ liệu quan hệ:\n- `TUYEN_XE(MaTuyen, TenTuyen, GiaVe)`\n- `HANH_KHACH(MaHK, HoTen, SoDT)`\n- `VE_XE(MaVe, MaTuyen, MaHK, NgayDi, SoGhe)`",
           items: [
             { text: "Trong bảng `VE_XE`, hai trường `MaTuyen` và `MaHK` là các Khóa ngoại tham chiếu tới khóa chính của hai bảng `TUYEN_XE` và `HANH_KHACH`.", correct: true },
             { text: "Hệ quản trị CSDL cho phép thêm một bản ghi mới vào bảng `VE_XE` có giá trị `MaTuyen = 'T99'` ngay cả khi mã `'T99'` chưa tồn tại trong bảng `TUYEN_XE`.", correct: false },
@@ -887,7 +815,7 @@ def xu_ly(A):
           items: [
             { text: "Việc nén và chuyển đổi hình ảnh sang các định dạng tối ưu cho web (như WebP hoặc JPEG nén hợp lý) giúp giảm dung lượng tệp và tăng tốc độ tải trang.", correct: true },
             { text: "Đưa trực tiếp tệp video gốc dung lượng 2 GB lên máy chủ web và bật chế độ tự động phát (autoplay) ở độ phân giải 4K là cách tốt nhất để tiết kiệm băng thông di động.", correct: false },
-            { text: "Sử dụng kỹ thuật thiết kế đáp ứng (Responsive Web Design) kết hợp thẻ `<meta name="viewport" content="width=device-width, initial-scale=1.0">` giúp trang web hiển thị cân đối trên màn hình điện thoại.", correct: true },
+            { text: "Sử dụng kỹ thuật thiết kế đáp ứng (Responsive Web Design) kết hợp thẻ `<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">` giúp trang web hiển thị cân đối trên màn hình điện thoại.", correct: true },
             { text: "Bổ sung thuộc tính `alt` mô tả nội dung cho các thẻ hình ảnh `<img>` vừa hỗ trợ người khiếm thị sử dụng trình đọc màn hình, vừa giúp công cụ tìm kiếm hiểu nội dung ảnh.", correct: true }
           ],
           explanation: "a) Đúng. b) Sai vì video 2 GB tự động phát sẽ làm nghẽn băng thông và tiêu tốn dữ liệu di động của người dùng. c) Đúng. d) Đúng."
@@ -895,12 +823,12 @@ def xu_ly(A):
       ]
     };
 
-    // STATE MANAGEMENT (Có tự động lưu trữ cục bộ localStorage)
+    // STATE MANAGEMENT
     const STORAGE_KEY_EXAM = 'ntc_thptlc_saved_exam_v2026';
     let currentExam = loadSavedExamFromStorage();
-    let selectedTrack = 'CS'; // 'CS' or 'ICT'
-    let userAnswersP1 = {}; // { qId: optionIndex }
-    let userAnswersP2 = {}; // { qId: { 0: true/false, 1: ..., 2: ..., 3: ... } }
+    let selectedTrack = 'CS';
+    let userAnswersP1 = {};
+    let userAnswersP2 = {};
     let isSubmitted = false;
     let timerSeconds = 50 * 60;
     let timerInterval = null;
@@ -946,14 +874,13 @@ def xu_ly(A):
       renderJSONEditor();
       renderWordPreview();
       startTimer();
-      lucide.createIcons();
+      if (window.lucide) lucide.createIcons();
     });
 
     // FORMAT TEXT WITH CODE BLOCKS
     function formatRichText(text) {
       if (!text) return '';
-      return text.replace(/```(\w+)?
-([\s\S]*?)```/g, (match, lang, code) => {
+      return text.replace(/```(\w+)?\n([\s\S]*?)```/g, (match, lang, code) => {
         const language = lang || 'python';
         const escaped = code.replace(/</g, '&lt;').replace(/>/g, '&gt;');
         return `<pre class="my-3 rounded-xl overflow-x-auto text-xs shadow-inner"><code class="language-${language}">${escaped}</code></pre>`;
@@ -965,7 +892,6 @@ def xu_ly(A):
       document.getElementById('display-exam-code').innerText = currentExam.code;
       document.getElementById('p1-count-label').innerText = currentExam.part1.length;
 
-      // Render Part I
       const p1Container = document.getElementById('part1-container');
       p1Container.innerHTML = '';
       currentExam.part1.forEach((q, idx) => {
@@ -1015,7 +941,6 @@ def xu_ly(A):
         p1Container.appendChild(qDiv);
       });
 
-      // Render Part II (Filtered by Common + Selected Track)
       const activeP2 = currentExam.part2.filter(q => q.track === 'COMMON' || q.track === selectedTrack);
       const p2Container = document.getElementById('part2-container');
       p2Container.innerHTML = '';
@@ -1079,7 +1004,7 @@ def xu_ly(A):
       });
 
       renderOMR(activeP2);
-      hljs.highlightAll();
+      if (window.hljs) hljs.highlightAll();
     }
 
     function renderOMR(activeP2) {
@@ -1107,7 +1032,6 @@ def xu_ly(A):
       });
     }
 
-    // USER INTERACTIONS
     function selectP1(qId, optIdx) {
       if (isSubmitted) return;
       userAnswersP1[qId] = optIdx;
@@ -1139,7 +1063,6 @@ def xu_ly(A):
       renderExam();
     }
 
-    // GRADING LOGIC (Chuẩn quy tắc Bộ GD&ĐT)
     function submitExam() {
       isSubmitted = true;
       clearInterval(timerInterval);
@@ -1201,7 +1124,6 @@ def xu_ly(A):
       }, 1000);
     }
 
-    // TAB SWITCHING
     function switchTab(tabId) {
       const tabs = ['exam-room', 'ai-generator', 'mix-export', 'knowledge-hub'];
       tabs.forEach(t => {
@@ -1220,7 +1142,6 @@ def xu_ly(A):
       if (tabId === 'ai-generator') renderJSONEditor();
     }
 
-    // SETTINGS & GEMINI API KEY STORAGE
     function openSettingsModal() {
       document.getElementById('settings-modal').classList.remove('hidden');
     }
@@ -1264,7 +1185,7 @@ def xu_ly(A):
       }
     }
 
-    // GEMINI AI EXAM GENERATION (Chuẩn ma trận 3 năm & xu hướng đề 2026)
+    // GEMINI AI EXAM GENERATION (Tự động fallback model nếu model đầu tiên chưa hỗ trợ)
     async function generateExamWithAI() {
       const apiKey = (localStorage.getItem('tinhoc_gemini_key') || '').trim();
       if (!apiKey) {
@@ -1289,18 +1210,18 @@ Hãy biên soạn một bộ đề thi mới theo chủ đề: "${topic}". Yêu 
 BẮT BUỘC TUÂN THỦ MA TRẬN PHÂN BỔ 3 KHỐI LỚP & XU HƯỚNG ĐỀ 2026:
 1. Tỉ lệ kiến thức 3 khối lớp: 10% Tin học 10 (đơn vị lưu trữ Byte/KB/MB/GB, biểu diễn số nhị phân, an toàn mạng, bản quyền) + 20% Tin học 11 (hệ điều hành, phần mềm nguồn mở, CSDL quan hệ/khóa chính/khóa ngoại, thao tác List/cắt chuỗi slicing Python) + 70% Tin học 12.
 2. Cấu trúc Phần I (${p1Count} câu trắc nghiệm 4 lựa chọn A, B, C, D) phân bổ đồng đều các mạch nội dung theo chuẩn đề 2026:
-   - Trí tuệ nhân tạo (AI): Đi sâu bản chất Học máy có giám sát / không giám sát, xe tự lái, nhận diện hình ảnh, hệ chuyên gia, trợ lý giọng nói.
+   - Trí tuệ nhân tạo (AI): Học máy có giám sát / không giám sát, xe tự lái, nhận diện hình ảnh, hệ chuyên gia, trợ lý giọng nói.
    - Mạng máy tính & An toàn số: Phân biệt địa chỉ IP, MAC, Subnet Mask, cấu hình mạng thực tế, IoT/Cloud, xác thực 2 yếu tố (2FA) và bản quyền SHTT trên sản phẩm AI.
-   - Hướng nghiệp CNTT: Phân tích vai trò thực tế của Kỹ sư dữ liệu, Kỹ sư phần mềm, Chuyên gia an ninh mạng, Quản trị CSDL.
+   - Hướng nghiệp CNTT: Vai trò thực tế của Kỹ sư dữ liệu, Kỹ sư phần mềm, Chuyên gia an ninh mạng, Quản trị CSDL.
    - Thiết kế Web (HTML5/CSS3): Tổ chức bố cục (Flexbox/Grid), thẻ ngữ nghĩa HTML5 (<header>, <nav>, <main>, <footer>), liên kết CSS ngoài (<link>).
    - Cơ sở dữ liệu & SQL: Tư duy truy vấn liên kết bảng, khóa chính/ngoại.
-   - Lập trình Python: Tăng cường câu hỏi truy vết biến (trace code), cắt chuỗi (slicing), đọc hiểu thuật toán tìm kiếm/sắp xếp và đánh giá độ phức tạp.
-3. Cấu trúc Phần II (Đúng/Sai - mỗi câu có đúng 4 ý a, b, c, d phân hóa mức độ Nhận biết - Thông hiểu - Vận dụng):
-   - ${p2Pairs} câu Phần chung ("track": "COMMON"): 1 câu tình huống Mạng máy tính & Internet trường học/doanh nghiệp + 1 câu đọc hiểu trực tiếp mã nguồn HTML/CSS tạo bố cục trang web.
-   - ${p2Pairs} câu Nhánh Khoa học máy tính ("track": "CS"): 1 câu truy vết vòng lặp, hoán đổi biến và giá trị trả về của hàm xử lý mảng (Python) + 1 câu tình huống thực tế về Học máy có giám sát (dữ liệu huấn luyện, gán nhãn, tiền xử lý, độ chính xác mô hình).
-   - ${p2Pairs} câu Nhánh Tin học ứng dụng ("track": "ICT"): 1 câu bài toán CSDL thực tế kiểm tra khóa chính, khóa ngoại và câu lệnh truy vấn SELECT ... INNER JOIN ... ON + 1 câu về tối ưu hóa tải trang, định dạng đa phương tiện (ảnh/video) và tính tương thích thiết bị di động (Responsive) trên Website.
+   - Lập trình Python: Truy vết biến (trace code), cắt chuỗi (slicing), đọc hiểu thuật toán tìm kiếm/sắp xếp và đánh giá độ phức tạp.
+3. Cấu trúc Phần II (Đúng/Sai - mỗi câu có đúng 4 ý a, b, c, d):
+   - ${p2Pairs} câu Phần chung ("track": "COMMON"): 1 câu Mạng máy tính & Internet trường học/doanh nghiệp + 1 câu đọc hiểu mã nguồn HTML/CSS tạo bố cục trang web.
+   - ${p2Pairs} câu Nhánh Khoa học máy tính ("track": "CS"): 1 câu truy vết vòng lặp/hàm xử lý mảng (Python) + 1 câu tình huống thực tế về Học máy có giám sát.
+   - ${p2Pairs} câu Nhánh Tin học ứng dụng ("track": "ICT"): 1 câu bài toán CSDL thực tế kiểm tra khóa chính, khóa ngoại và truy vấn SELECT ... INNER JOIN ... ON + 1 câu về tối ưu hóa đa phương tiện và tính tương thích thiết bị di động (Responsive) trên Website.
 
-Trả về DUY NHẤT một đối tượng JSON hợp lệ (không bọc markdown \`\`\`json, không giải thích ngoài JSON) theo schema:
+Trả về DUY NHẤT một đối tượng JSON hợp lệ (không bọc markdown, không giải thích ngoài JSON) theo schema:
 {
   "title": "ĐỀ THI THỬ TỐT NGHIỆP THPT MÔN TIN HỌC",
   "code": "${String(Math.floor(100 + Math.random() * 900)).padStart(4, '0')}",
@@ -1308,7 +1229,7 @@ Trả về DUY NHẤT một đối tượng JSON hợp lệ (không bọc markdo
     {
       "id": 1,
       "topic": "Lớp 10/11/12 • Tên chủ đề",
-      "question": "Nội dung câu hỏi (code Python/SQL/HTML đặt trong khối \`\`\`python ... \`\`\`)",
+      "question": "Nội dung câu hỏi",
       "options": ["Phương án A", "Phương án B", "Phương án C", "Phương án D"],
       "answer": 0,
       "explanation": "Giải thích ngắn gọn, chính xác"
@@ -1331,18 +1252,32 @@ Trả về DUY NHẤT một đối tượng JSON hợp lệ (không bọc markdo
   ]
 }`;
 
-      try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${apiKey}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: { temperature: 0.7 }
-          })
-        });
+      const modelsToTry = ['gemini-2.5-flash', 'gemini-2.0-flash'];
+      let lastError = '';
 
-        const data = await response.json();
-        if (data.error) throw new Error(data.error.message);
+      try {
+        let data = null;
+        for (const modelName of modelsToTry) {
+          const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: prompt }] }],
+              generationConfig: {
+                temperature: 0.7,
+                responseMimeType: 'application/json'
+              }
+            })
+          });
+          const resJson = await response.json();
+          if (!resJson.error) {
+            data = resJson;
+            break;
+          }
+          lastError = resJson.error.message;
+        }
+
+        if (!data) throw new Error(lastError || 'Không thể kết nối tới Gemini API');
 
         let rawText = data.candidates[0].content.parts[0].text.trim();
         rawText = rawText.replace(/^```json/i, '').replace(/^```/, '').replace(/```$/, '').trim();
@@ -1393,7 +1328,6 @@ Trả về DUY NHẤT một đối tượng JSON hợp lệ (không bọc markdo
       const cloned = JSON.parse(JSON.stringify(currentExam));
       cloned.code = String(Math.floor(100 + Math.random() * 900)).padStart(4, '0');
 
-      // Shuffle Part I questions & options
       cloned.part1.sort(() => Math.random() - 0.5);
       cloned.part1.forEach((q, i) => {
         q.id = i + 1;
@@ -1402,7 +1336,6 @@ Trả về DUY NHẤT một đối tượng JSON hợp lệ (không bọc markdo
         q.answer = q.options.indexOf(correctText);
       });
 
-      // Shuffle Part II items
       cloned.part2.forEach(q => {
         q.items.sort(() => Math.random() - 0.5);
       });
@@ -1439,12 +1372,11 @@ Trả về DUY NHẤT một đối tượng JSON hợp lệ (không bọc markdo
           <div style="border: 1px solid #000; padding: 6px 12px; display: inline-block; font-weight: bold; margin-bottom: 16px;">
             MÃ ĐỀ THI: ${currentExam.code} (GV: ${teacher})
           </div>
-          <p style="font-weight: bold; font-size: 12pt; margin-top: 10px;">PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn (24 câu).</p>
+          <p style="font-weight: bold; font-size: 12pt; margin-top: 10px;">PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn (${currentExam.part1.length} câu).</p>
       `;
 
       currentExam.part1.forEach((q, idx) => {
-        const cleanQ = q.question.replace(/```(\w+)?
-([\s\S]*?)```/g, '<pre style="background:#f4f4f4; padding:8px; border:1px solid #ccc; font-family:Consolas,monospace; font-size:10pt;">$2</pre>');
+        const cleanQ = q.question.replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre style="background:#f4f4f4; padding:8px; border:1px solid #ccc; font-family:Consolas,monospace; font-size:10pt;">$2</pre>');
         html += `
           <div style="margin-bottom: 12px; font-size: 12pt;">
             <strong>Câu ${idx + 1}:</strong> ${cleanQ}
@@ -1457,8 +1389,7 @@ Trả về DUY NHẤT một đối tượng JSON hợp lệ (không bọc markdo
 
       html += `<p style="font-weight: bold; font-size: 12pt; margin-top: 16px;">PHẦN II. Câu trắc nghiệm đúng sai (Phần A: Chung • Phần B1: CS • Phần B2: ICT).</p>`;
       currentExam.part2.forEach((q, idx) => {
-        const cleanStem = q.stem.replace(/```(\w+)?
-([\s\S]*?)```/g, '<pre style="background:#f4f4f4; padding:8px; border:1px solid #ccc; font-family:Consolas,monospace; font-size:10pt;">$2</pre>');
+        const cleanStem = q.stem.replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre style="background:#f4f4f4; padding:8px; border:1px solid #ccc; font-family:Consolas,monospace; font-size:10pt;">$2</pre>');
         const trackLabel = q.track === 'COMMON' ? 'Phần A - Chung' : (q.track === 'CS' ? 'Phần B1 - CS' : 'Phần B2 - ICT');
         html += `
           <div style="margin-bottom: 12px; font-size: 12pt;">
@@ -1496,7 +1427,7 @@ Trả về DUY NHẤT một đối tượng JSON hợp lệ (không bọc markdo
       const footer = "</body></html>";
       const sourceHTML = header + content + footer;
 
-      const blob = new Blob(['﻿', sourceHTML], { type: 'application/msword' });
+      const blob = new Blob(['\ufeff', sourceHTML], { type: 'application/msword' });
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
