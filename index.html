@@ -396,7 +396,7 @@ ORDER BY Diem.DiemTin DESC;</code></pre>
       <div class="space-y-3">
         <div>
           <label class="block text-xs font-bold text-slate-700 mb-1">Tên Trường / Tổ chuyên môn (Hiển thị trên đề in):</label>
-          <input type="text" id="input-school-name" value="TRƯỜNG THPT CHUYÊN • TỔ TIN HỌC" class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm">
+          <input type="text" id="input-school-name" value="TRƯỜNG THPT LÀO CAi" class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm">
         </div>
         <div>
           <label class="block text-xs font-bold text-slate-700 mb-1">Tên Giáo viên ra đề:</label>
@@ -954,7 +954,7 @@ ORDER BY Diem.DiemTin DESC;</code></pre>
     }
 
     function loadSettingsFromStorage() {
-      const school = localStorage.getItem('tinhoc_school') || 'TRƯỜNG THPT CHUYÊN • TỔ TIN HỌC';
+      const school = localStorage.getItem('tinhoc_school') || 'TRƯỜNG THPT LÀO CAI';
       const teacher = localStorage.getItem('tinhoc_teacher') || 'Giáo viên Tin học';
       const key = localStorage.getItem('tinhoc_gemini_key') || '';
 
@@ -1108,7 +1108,7 @@ Lưu ý:
     }
 
     function renderWordPreview() {
-      const school = localStorage.getItem('tinhoc_school') || 'TRƯỜNG THPT CHUYÊN • TỔ TIN HỌC';
+      const school = localStorage.getItem('tinhoc_school') || 'TRƯỜNG THPT LÀO CAI';
       const teacher = localStorage.getItem('tinhoc_teacher') || 'Giáo viên Tin học';
       const letters = ['A', 'B', 'C', 'D'];
       const subLetters = ['a)', 'b)', 'c)', 'd)'];
