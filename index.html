@@ -237,13 +237,41 @@
           </div>
 
           <div>
-            <label class="block text-xs font-bold text-slate-700 mb-1">Chủ đề trọng tâm muốn AI sinh câu hỏi:</label>
-            <select id="ai-topic-select" class="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm focus:outline-none focus:border-teal-600">
-              <option value="Tổng hợp chuẩn ma trận đề 2026 của Bộ GD&ĐT qua 3 khối lớp: 10% Tin học 10, 20% Tin học 11 và 70% Tin học 12">Tổng hợp chuẩn ma trận 3 năm (10% L10 • 20% L11 • 70% L12)</option>
-              <option value="Chuyên đề Lập trình Python & Thuật toán qua 3 khối lớp (Cú pháp cơ bản L10, List/Xâu/Hàm L11, Truy vết biến & Độ phức tạp thuật toán L12)">Chuyên đề Lập trình Python & Truy vết thuật toán (L10-11-12)</option>
-              <option value="Chuyên đề Cơ sở dữ liệu & SQL (Mô hình quan hệ, Khóa chính/ngoại L11 và Truy vấn SELECT/INNER JOIN thực tế L12)">Chuyên đề Cơ sở dữ liệu & Truy vấn SQL (L11-12)</option>
-              <option value="Chuyên đề Thiết kế Web HTML5/CSS3 (Bố cục Flexbox/Grid, Thẻ ngữ nghĩa, Liên kết CSS ngoài và Tối ưu đa phương tiện)">Chuyên đề Thiết kế Web HTML5/CSS3 & Đa phương tiện</option>
-              <option value="Chuyên đề AI (Học máy có giám sát/không giám sát), Mạng máy tính (IP/MAC/Subnet Mask), An toàn số 2FA & Hướng nghiệp">Chuyên đề AI, Mạng, An toàn số & Hướng nghiệp</option>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Phạm vi kiến thức & Chủ đề trọng tâm sinh đề:</label>
+            <select id="ai-topic-select" class="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white focus:outline-none focus:border-teal-600 font-medium text-slate-800">
+              <optgroup label="1. ĐỀ TỔNG HỢP CHUẨN CẤU TRÚC BỘ GD&ĐT (2026)">
+                <option value="Đề thi thử Tốt nghiệp THPT chuẩn ma trận 2026 của Bộ GD&ĐT: phân bổ chuẩn 10% Tin học 10, 20% Tin học 11 và 70% Tin học 12, đầy đủ các mạch kiến thức Chung, Định hướng CS và Định hướng ICT" selected>
+                  ★ Đề chuẩn Tốt nghiệp THPT 2026 (10% L10 • 20% L11 • 70% L12)
+                </option>
+                <option value="Đề tổng ôn toàn diện kiến thức cốt lõi Tin học lớp 12 (Chủ đề A đến G: AI, Mạng, Đạo đức số, HTML/CSS, Hướng nghiệp, CSDL/Thuật toán)">
+                  Tổng ôn toàn diện chương trình Tin học lớp 12 (Chủ đề A → G)
+                </option>
+              </optgroup>
+              <optgroup label="2. ÔN TẬP THEO TỪNG CHỦ ĐỀ CỐT LÕI (LỚP 10 – 11 – 12)">
+                <option value="Chủ đề A & B (Lớp 12): Giới thiệu Trí tuệ nhân tạo (Học máy có giám sát/không giám sát, Thị giác máy tính, NLP, Hệ chuyên gia) & Mạng máy tính (IP, MAC, Router/Switch, IoT)">
+                  Chủ đề A & B: Trí tuệ nhân tạo (AI) & Mạng máy tính – Internet
+                </option>
+                <option value="Chủ đề D & G (Lớp 12): Đạo đức, pháp luật và văn hóa trong môi trường số (Xác thực 2FA, An toàn thông tin, Bản quyền SHTT với AI) & Hướng nghiệp nhóm ngành CNTT">
+                  Chủ đề D & G: Đạo đức số, An toàn thông tin & Hướng nghiệp
+                </option>
+                <option value="Chủ đề F (Lớp 12): Giải quyết vấn đề với sự trợ giúp của máy tính – Thiết kế Web với HTML5 & CSS3 (Thẻ ngữ nghĩa, Biểu mẫu Form, Bố cục Flexbox/Grid, Liên kết CSS ngoài)">
+                  Chủ đề F: Tạo trang web với HTML5 & CSS3 (Bố cục & Biểu mẫu)
+                </option>
+                <option value="Mạch Lập trình Python xuyên suốt Lớp 10–11–12: Cú pháp cơ bản, Xâu ký tự (Slicing), Danh sách (List), Hàm, Truy vết biến vòng lặp và Đánh giá độ phức tạp thuật toán">
+                  Mạch Lập trình Python & Truy vết thuật toán (Lớp 10 – 11 – 12)
+                </option>
+                <option value="Mạch Cơ sở dữ liệu & SQL (Lớp 11–12): Mô hình quan hệ, Khóa chính, Khóa ngoại, Ràng buộc toàn vẹn và Truy vấn SELECT – INNER JOIN – WHERE – GROUP BY">
+                  Mạch Cơ sở dữ liệu quan hệ & Truy vấn SQL (Lớp 11 – 12)
+                </option>
+              </optgroup>
+              <optgroup label="3. CHUYÊN SÂU THEO ĐỊNH HƯỚNG TỰ CHỌN (PHẦN II - B1 / B2)">
+                <option value="Chuyên sâu Định hướng Khoa học máy tính (CS): Thuật toán tìm kiếm/sắp xếp, Đệ quy, Đánh giá độ phức tạp O(n)/O(n^2), Mạng nơ-ron và Học máy (Machine Learning)">
+                  Định hướng CS (Khoa học máy tính): Thuật toán & Học máy
+                </option>
+                <option value="Chuyên sâu Định hướng Tin học ứng dụng (ICT): Thiết kế CSDL thực tế, Truy vấn SQL nhiều bảng, Quản trị website và Tối ưu hóa dữ liệu đa phương tiện">
+                  Định hướng ICT (Tin học ứng dụng): CSDL thực tế & Đa phương tiện
+                </option>
+              </optgroup>
             </select>
           </div>
 
